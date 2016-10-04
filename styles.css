@@ -1,8 +1,21 @@
 body { 
-padding-top: 70px;
+	padding-top: 70px;
 }
 
 .fa-ship {
-font-size: 70px;
-color: blue;
+	font-size: 35px;
+	color: blue;
+	margin-top: 0px;
+}
+
+.contact-info-all {
+	border: 2px solid black;
+}
+
+.contact-9 {
+	text-align: left;
+}
+
+.user-default-image {
+	width: 30px;
 }
