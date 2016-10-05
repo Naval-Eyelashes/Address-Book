@@ -3,6 +3,7 @@ body {
 	font-size: 10px;
 }
 
+
 .fa-ship {
 	font-size: 35px;
 	color: blue;
@@ -28,4 +29,8 @@ body {
 
 .form-control {
 	height: 20px;
+}
+
+.navbar-right {
+	margin-top: 5px;
 }
