@@ -2,19 +2,22 @@
 
 
 
-function mainController() {
+function mainController($timeout) {
 	const ctrl = this;
 	ctrl.userChoice = '';
+	ctrl.formClicked = false;
 	ctrl.people = [
         {
             firstName: "Jay",
             lastName: "Willey",
+            title: "Developer",
             phone: "859-111-1111",
             email: "jay@jay.com",
         },
         {
             firstName: "Kelly",
             lastName: "Wright", 
+            title: "Developer",
             phone: "859-222-2222",
             email: "kelly@kelly.com",
         }
@@ -23,6 +26,7 @@ function mainController() {
     ctrl.newPerson = {
     	firstName: '',
     	lastName: '',
+    	title: '',
     	phone: '',
     	email: '',
     };
@@ -34,14 +38,22 @@ function mainController() {
     function addPerson() {
         ctrl.people.push(ctrl.newPerson);
         ctrl.newPerson = {};
+        ctrl.formClicked = false;
     }
 
-    function ctrl.selectedUser(person) {
+    function selectedUser(person) {
     	ctrl.userChoice = person;
-    	console.log(test)
     }
 
-    // ctrl.selectedUser = selectedUser;
+    function showForm() {
+    	ctrl.formClicked = true;
+    	
+    }
+
+    ctrl.selectedUser = selectedUser;
+    ctrl.addPerson = addPerson;
+    ctrl.showForm = showForm;
+
 }
 
 

@@ -25,6 +25,11 @@
                         <i class="fa fa-ship" aria-hidden="true"></i>
                     </a>
                 </div>
+                <div class="navbar-right">
+                    <button ng-click="mainCtrl.showForm()">
+                        Add User
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -34,18 +39,17 @@
             <div class="col-xs-4">
                 <table class="table table-striped table-bordered table-responsive">
                     <thead>          
-                        <th>User List</th>            
+                        <th>Contacts</th>            
                     </thead>
                     <tbody>
-                        <th>Name</th>
-                        
+                                                
                         <tr ng-repeat="person in mainCtrl.people">
                             
                             <td >
-                                <button class="btn btn-primary" ng-click="mainCtrl.selectedUser(person)">
+                                <a href="" ng-click="mainCtrl.selectedUser(person)">
                                     {{person.firstName}}
                                     {{person.lastName}}
-                                </button>
+                                </a>
                             </td>
                             
                         </tr>
@@ -53,42 +57,69 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-xs-8 contact-info-all">
-                <h2>Contact Information</h2>
-                {{mainCtrl.userChoice}}
-                <div class="row">
-                    <div class="col-xs-3">
-                        <img class="user-default-image" src="awesome_profile1.png">
-                    </div>
-                    <div class="col-xs-9 contact-9">
-                        <div class="row">
-                            Name
+            <div class="col-xs-8">
+                <div class="contact-info-all">
+                    <h3>Contact Details</h3>
+                    
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img class="user-default-image" src="awesome_profile1.png">
                         </div>
-                        <div class="row">
-                            Title
+                        <div class="col-xs-9 contact-9">
+                            <div class="row">
+                                {{mainCtrl.userChoice.firstName}}
+                                {{mainCtrl.userChoice.lastName}}
+                            </div>
+                            <div class="row">
+                                {{mainCtrl.userChoice.title}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <span class="glyphicon glyphicon-earphone"></span>
+                        </div>
+                        <div class="col-xs-9 contact-9">
+                            <div class="row">
+                                {{mainCtrl.userChoice.phone}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-xs-9 contact-9">
+                            <div class="row">
+                                {{mainCtrl.userChoice.email}}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-3">
-                        <span class="glyphicon glyphicon-earphone"></span>
+                <div class="new-user-form" ng-show="mainCtrl.formClicked">
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input type="text" ng-model="mainCtrl.newPerson.firstName" class="form-control">
                     </div>
-                    <div class="col-xs-9 contact-9">
-                        <div class="row">
-                            Phone
-                        </div>
+                    <div class="form-group">
+                        <label for="">Last Name</label>
+                        <input type="text" ng-model="mainCtrl.newPerson.lastName" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label for="">Title</label>
+                        <input type="text" ng-model="mainCtrl.newPerson.title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Phone Number</label>
+                        <input type="text" ng-model="mainCtrl.newPerson.phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text" ng-model="mainCtrl.newPerson.email" class="form-control">
+                    </div>
+                    <button ng-click="mainCtrl.addPerson()">Add Person</button>
                 </div>
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-xs-9 contact-9">
-                        <div class="row">
-                            Email
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

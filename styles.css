@@ -1,5 +1,6 @@
 body { 
 	padding-top: 70px;
+	font-size: 10px;
 }
 
 .fa-ship {
@@ -10,6 +11,7 @@ body {
 
 .contact-info-all {
 	border: 2px solid black;
+	padding: 0 0 5px 15px;
 }
 
 .contact-9 {
@@ -18,4 +20,12 @@ body {
 
 .user-default-image {
 	width: 30px;
+}
+
+.form-group {
+	margin-bottom: 0;
+}
+
+.form-control {
+	height: 20px;
 }
