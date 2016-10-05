@@ -3,11 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        Address-Book<!DOCTYPE html>
-<html ng-app="app">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
         Address-Book
     </title>
     <!-- Latest compiled and minified CSS -->
@@ -34,7 +29,7 @@
         </nav>
     </header>
 
-    <div class="container" ng-controller="MainCtrl as mainCtrl"> 
+    <div class="container"> 
         <div class="row"> 
             <div class="col-xs-4">
                 <table class="table table-striped table-bordered table-responsive">
@@ -45,10 +40,14 @@
                         <th>Name</th>
                         
                         <tr ng-repeat="person in mainCtrl.people">
+                            
                             <td >
-                                {{person.firstName}}
-                                {{person.lastName}}
+                                <button class="btn btn-primary" ng-click="mainCtrl.selectedUser(person)">
+                                    {{person.firstName}}
+                                    {{person.lastName}}
+                                </button>
                             </td>
+                            
                         </tr>
 
                     </tbody>
@@ -56,6 +55,7 @@
             </div>
             <div class="col-xs-8 contact-info-all">
                 <h2>Contact Information</h2>
+                {{mainCtrl.userChoice}}
                 <div class="row">
                     <div class="col-xs-3">
                         <img class="user-default-image" src="awesome_profile1.png">

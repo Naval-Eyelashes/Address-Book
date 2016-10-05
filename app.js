@@ -4,6 +4,7 @@
 
 function mainController() {
 	const ctrl = this;
+	ctrl.userChoice = '';
 	ctrl.people = [
         {
             firstName: "Jay",
@@ -26,11 +27,21 @@ function mainController() {
     	email: '',
     };
 
+    // function getPerson() {
+    // 	return R.range(1, )
+    // }
+
     function addPerson() {
         ctrl.people.push(ctrl.newPerson);
         ctrl.newPerson = {};
     }
 
+    function ctrl.selectedUser(person) {
+    	ctrl.userChoice = person;
+    	console.log(test)
+    }
+
+    // ctrl.selectedUser = selectedUser;
 }
 
 
