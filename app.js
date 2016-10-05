@@ -2,7 +2,7 @@
 
 
 
-function mainController($timeout) {
+function mainController() {
 	const ctrl = this;
 	ctrl.people = [
         {
@@ -24,7 +24,7 @@ function mainController($timeout) {
     	lastName: '',
     	phone: '',
     	email: '',
-    }
+    };
 
     function addPerson() {
         ctrl.people.push(ctrl.newPerson);
