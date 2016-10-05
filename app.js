@@ -13,6 +13,7 @@ function mainController($timeout) {
             title: "Developer",
             phone: "859-111-1111",
             email: "jay@jay.com",
+            address: "348 E. Main Street, Lexington, KY 40507",
         },
         {
             firstName: "Kelly",
@@ -20,6 +21,7 @@ function mainController($timeout) {
             title: "Developer",
             phone: "859-222-2222",
             email: "kelly@kelly.com",
+            address: "348 E. Main Street, Lexington, KY 40507",
         }
     ];
 
@@ -29,6 +31,7 @@ function mainController($timeout) {
     	title: '',
     	phone: '',
     	email: '',
+    	address: '',
     };
 
     // function getPerson() {
