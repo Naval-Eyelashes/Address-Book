@@ -2,10 +2,12 @@
 
 
 
-function mainController($timeout) {
+function mainController($timeout, $http) {
 	const ctrl = this;
 	ctrl.userChoice = '';
 	ctrl.formClicked = false;
+	ctrl.contentsJSON = null;
+
 	ctrl.people = [
         {
             firstName: "Jay",
@@ -53,9 +55,23 @@ function mainController($timeout) {
     	
     }
 
+    function getJSON() {
+    	$http.get("people.json")
+		.success(function(data) {
+    		ctrl.contentsJSON = data;
+		})
+		.error(function(data, status, error, config) {
+			ctrl.contentsJSON = [{heading: "Error", description: "Could not load json"}];
+		})
+    }
+	
+
     ctrl.selectedUser = selectedUser;
     ctrl.addPerson = addPerson;
     ctrl.showForm = showForm;
+    ctrl.getJSON = getJSON;
+
+    ctrl.getJSON();
 
 }
 
